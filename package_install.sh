@@ -15,3 +15,6 @@ yum install nano -y > /dev/null 2>&1
 # install openssh-server
 echo "Installing Openssh-server"
 yum install openssh-server -y > /dev/null 2>&1
+echo "enabling Root user access on ssh and starting openssh-server service"
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+systemctl start sshd
